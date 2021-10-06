@@ -1,0 +1,24 @@
+{
+    "name": "flow",
+    "version": "1.0.0",
+    "description": "Flow child theme development package",
+    "author": "Tahi",
+    "license": "",
+    "scripts": {
+        "scss": "sass --style=compressed theme/css:theme/css",
+        "uglify": "uglify-merge -s theme/js -o scripts.min.js",
+        "build:css": "run-s scss",
+        "build:js": "run-s uglify",
+        "build": "run-s build:*",
+        "watch:css": "onchange \"theme/css\" -- run-s build:css",
+        "watch:js": "onchange \"theme/js\" -- run-s build:js",
+        "watch": "run-p watch:*"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "sass": "^1.32.8",
+        "uglify-merge-js": "^0.0.7"
+    }
+}
